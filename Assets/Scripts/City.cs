@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class City : MonoBehaviour
 {
-    public float rows;
-    public float cols;
+    public float nRows;
+    public float nCols;
 
     public GameObject schoolPrefab;
     public GameObject hospitalPrefab;
@@ -19,7 +19,7 @@ public class City : MonoBehaviour
 
     public float roadSize;
 
-    void ShuffleList(List<GameObject> list)
+    void static ShuffleList(List<GameObject> list)
     {
         for (int i = 0; i < list.Count; i++)
         {
@@ -32,8 +32,8 @@ public class City : MonoBehaviour
 
     public void GenerateBuildings(int nHospitals, int nSchools, int nMalls)
     {
-        float blocksY = rows * 3;
-        float blocksX = cols * 3;
+        float blocksY = nRows * 3;
+        float blocksX = nCols * 3;
 
         gameObject.transform.localScale = new Vector3(blocksX + roadSize, 0.25f, blocksY + roadSize);
         gameObject.transform.localPosition = new Vector3(blocksX / 2, -0.25f / 2, blocksY / 2);
@@ -43,12 +43,10 @@ public class City : MonoBehaviour
         fillerBuildings.Add(housePrefab);
         fillerBuildings.Add(parkPrefab);
 
-        
-
         int totalBuildings = nHospitals + nSchools + nMalls;
-        int emptyBlocks = (int)(rows * cols) - totalBuildings;
+        int emptyBlocks = (int)(nRows * nCols) - totalBuildings;
 
-        for (int i = 0; i < (int)(rows * cols); i++)
+        for (int i = 0; i < (int)(nRows * nCols); i++)
         {
             if (i < nHospitals)
             {
@@ -73,9 +71,9 @@ public class City : MonoBehaviour
         // Instantiate Major buildings (1 per block)
         int instantiatedBuildings = 0;
 
-        for (int i = 0; i < rows; i++)
+        for (int i = 0; i < nRows; i++)
         {
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < nCols; j++)
             {
                 if (buildingPool[instantiatedBuildings].name != "empty")
                 {
@@ -90,9 +88,9 @@ public class City : MonoBehaviour
         }
 
         // Filling up remaining spaces
-        for (int i = 0; i < rows * 3; i++)
+        for (int i = 0; i < nRows * 3; i++)
         {
-            for (int j = 0; j < cols * 3; j++)
+            for (int j = 0; j < nCols * 3; j++)
             {
                 GameObject building = Instantiate(fillerBuildings[Random.Range(0, 2)]);
                 building.GetComponent<Building>().Build(new Vector2(j, i), roadSize);
@@ -107,7 +105,7 @@ public class City : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

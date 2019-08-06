@@ -8,6 +8,11 @@ public class AgentController : MonoBehaviour
     Vector3 start;
     public Vector3 destination;
     public NavMeshAgent navMeshAgent;
+    private int scheduleIndex;
+
+    public List<GameObject> schedule;
+    public List<GameObject> friends;
+    public List<GameObject> enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +22,14 @@ public class AgentController : MonoBehaviour
         start = new Vector3(1, .1f, 2);
         destination = new Vector3(6, .1f, 8);
         navMeshAgent.SetDestination(destination);
+
+        scheduleIndex = 0;
+    }
+
+    void NextDestination()
+    {
+        scheduleIndex++;
+        navMeshAgent.SetDestination(schedule[scheduleIndex].transform.position);
     }
 
     // Update is called once per frame

@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b14a939cbb43f1438ebabbe5ab2723f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 3
-  cols: 3
+  nRows: 5
+  nCols: 3
   schoolPrefab: {fileID: 2696821755805413949, guid: 4fedb2b040381244ab2b59534b5351a9,
     type: 3}
   hospitalPrefab: {fileID: 2696821755805413949, guid: a0db57434f5e54c4b8b61956c8ed3e89,
@@ -117,5 +117,6 @@ MonoBehaviour:
     type: 3}
   housePrefab: {fileID: 2696821755805413949, guid: 25cc317caa7ffb342b39e18edce0e354,
     type: 3}
+  emptyPrefab: {fileID: 0}
   buildings: []
   roadSize: 0.25

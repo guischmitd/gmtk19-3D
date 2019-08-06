@@ -15,9 +15,10 @@ public class GameController : MonoBehaviour
     void Start()
     {
         city = Instantiate(cityPrefab);
-        city.GetComponent<City>().rows = 5;
-        city.GetComponent<City>().cols = 3;
-        city.GetComponent<City>().GenerateBuildings(5, 3, 7);
+        City cityController = city.GetComponent<City>();
+        cityController.nRows = 5;
+        cityController.nCols = 3;
+        cityController.GenerateBuildings(5, 3, 7);
 
         navMesh = Instantiate(navMeshPrefab);
         navMesh.transform.parent = city.transform;
@@ -25,6 +26,11 @@ public class GameController : MonoBehaviour
         navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
 
         GameObject agent = Instantiate(agentPrefab);
+        foreach (var item in collection)
+        {
+
+        }
+        agent.schedule = 
     }
 
     // Update is called once per frame
