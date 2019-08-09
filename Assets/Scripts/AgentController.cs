@@ -11,19 +11,20 @@ public class AgentController : MonoBehaviour
     private int scheduleIndex;
 
     public List<GameObject> schedule;
-    public List<GameObject> friends;
-    public List<GameObject> enemies;
 
     // Start is called before the first frame update
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        start = new Vector3(1, .1f, 2);
-        destination = new Vector3(6, .1f, 8);
-        navMeshAgent.SetDestination(destination);
-
         scheduleIndex = 0;
+
+        //start = new Vector3(1, .1f, 2);
+        //destination = new Vector3(6, .1f, 8);
+
+        navMeshAgent.SetDestination(schedule[scheduleIndex].transform.position);
+
+        
     }
 
     void NextDestination()
@@ -35,13 +36,10 @@ public class AgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((transform.position - destination).magnitude <= 0.1f)
+        if ((transform.position - schedule[scheduleIndex].transform.position).magnitude <= 1f)
         {
-            print("Halfway through!");
-            navMeshAgent.SetDestination(start);
-        } else if ((transform.position - start).magnitude <= 0.1f) {
-            print("Another lap!");
-            navMeshAgent.SetDestination(destination);
+            print("Got to " + schedule[scheduleIndex].name);
+            NextDestination();
         }
     }
 }

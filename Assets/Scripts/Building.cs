@@ -39,6 +39,7 @@ public class Building : MonoBehaviour
             string otherType = collision.gameObject.GetComponent<Building>().type;
             if (otherType == "park" || otherType == "house")
             {
+                GameObject.FindGameObjectWithTag("City").GetComponent<City>().buildings.Remove(collision.gameObject);
                 Destroy(collision.gameObject);
             }
         }

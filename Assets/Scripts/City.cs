@@ -19,7 +19,7 @@ public class City : MonoBehaviour
 
     public float roadSize;
 
-    void static ShuffleList(List<GameObject> list)
+    static void ShuffleList(List<GameObject> list)
     {
         for (int i = 0; i < list.Count; i++)
         {

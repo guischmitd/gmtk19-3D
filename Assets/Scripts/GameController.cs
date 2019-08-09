@@ -26,11 +26,13 @@ public class GameController : MonoBehaviour
         navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
 
         GameObject agent = Instantiate(agentPrefab);
-        foreach (var item in collection)
-        {
+        //cityController.buildings
 
+        for (int i = 0; i < 5; i++)
+        {
+            int index = Random.Range(0, cityController.buildings.Count);
+            agent.GetComponent<AgentController>().schedule.Add(cityController.buildings[index]);
         }
-        agent.schedule = 
     }
 
     // Update is called once per frame

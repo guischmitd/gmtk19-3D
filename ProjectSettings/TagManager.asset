@@ -7,6 +7,7 @@ TagManager:
   - Building
   - Agent
   - NavMesh
+  - City
   layers:
   - Default
   - TransparentFX
