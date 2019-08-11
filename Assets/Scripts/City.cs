@@ -78,6 +78,7 @@ public class City : MonoBehaviour
                 if (buildingPool[instantiatedBuildings].name != "empty")
                 {
                     GameObject building = Instantiate(buildingPool[instantiatedBuildings]);
+                    building.name = buildingPool[instantiatedBuildings].name + i.ToString() + j.ToString();
                     building.GetComponent<Building>().Build(new Vector2 (j * 3, i * 3), roadSize);
 
                     building.transform.parent = gameObject.transform;

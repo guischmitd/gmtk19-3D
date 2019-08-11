@@ -29,7 +29,7 @@ public class AgentController : MonoBehaviour
 
     void NextDestination()
     {
-        scheduleIndex++;
+        scheduleIndex = scheduleIndex % schedule.Count;
         navMeshAgent.SetDestination(schedule[scheduleIndex].transform.position);
     }
 
