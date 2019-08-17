@@ -16,6 +16,7 @@ public class City : MonoBehaviour
     public GameObject emptyPrefab;
 
     public List<GameObject> buildings;
+    public List<Vector2> occupied;
 
     public float roadSize;
 
@@ -71,15 +72,24 @@ public class City : MonoBehaviour
         // Instantiate Major buildings (1 per block)
         int instantiatedBuildings = 0;
 
-        for (int i = 0; i < nRows; i++)
+        for (int i = 0; i < nCols; i++)
         {
-            for (int j = 0; j < nCols; j++)
+            for (int j = 0; j < nRows; j++)
             {
                 if (buildingPool[instantiatedBuildings].name != "empty")
                 {
                     GameObject building = Instantiate(buildingPool[instantiatedBuildings]);
-                    building.GetComponent<Building>().Build(new Vector2 (j * 3, i * 3), roadSize);
+                    Vector2 pos = new Vector2(i * 3, j * 3);
+                    building.GetComponent<Building>().Build(pos, roadSize);
 
+                    for (int x = 0; x < building.GetComponent<Building>().sizeX; x++)
+                    {
+                        for (int y = 0; y < building.GetComponent<Building>().sizeZ; y++)
+                        {
+                            occupied.Add(pos + new Vector2(x, y));
+                        }
+                    }
+                    
                     building.transform.parent = gameObject.transform;
                     buildings.Add(building);
                 }
@@ -88,15 +98,19 @@ public class City : MonoBehaviour
         }
 
         // Filling up remaining spaces
-        for (int i = 0; i < nRows * 3; i++)
+        for (int i = 0; i < blocksX; i++)
         {
-            for (int j = 0; j < nCols * 3; j++)
+            for (int j = 0; j < blocksY; j++)
             {
-                GameObject building = Instantiate(fillerBuildings[Random.Range(0, 2)]);
-                building.GetComponent<Building>().Build(new Vector2(j, i), roadSize);
+                Vector2 pos = new Vector2(i, j);
+                if (!occupied.Contains(pos))
+                {
+                    GameObject building = Instantiate(fillerBuildings[Random.Range(0, 2)]);
+                    building.GetComponent<Building>().Build(pos, roadSize);
 
-                building.transform.parent = gameObject.transform;
-                buildings.Add(building);
+                    building.transform.parent = gameObject.transform;
+                    buildings.Add(building);
+                }       
             }
         }
         return;

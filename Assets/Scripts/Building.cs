@@ -9,6 +9,7 @@ public class Building : MonoBehaviour
     public float sizeZ;
     public string type;
     public bool collided;
+    public GameObject entrance;
 
     public GameObject[] agents;
 
@@ -16,7 +17,6 @@ public class Building : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(pos.x + sizeX / 2, sizeY / 2, pos.y + sizeZ / 2);
         gameObject.transform.localScale = new Vector3(sizeX - roadSize, sizeY, sizeZ - roadSize);
-
         return;
     }
 
@@ -32,17 +32,18 @@ public class Building : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (type != "park" && type != "house")
-        {
-            string otherType = collision.gameObject.GetComponent<Building>().type;
-            if (otherType == "park" || otherType == "house")
-            {
-                GameObject.FindGameObjectWithTag("City").GetComponent<City>().buildings.Remove(collision.gameObject);
-                Destroy(collision.gameObject);
-            }
-        }
-        
-    }
+    //    void OnCollisionEnter(Collision collision)
+    //    {
+    //        if (type != "park" && type != "house")
+    //        {
+    //            string otherType = collision.gameObject.GetComponent<Building>().type;
+    //            if (otherType == "park" || otherType == "house")
+    //            {
+    //                print("Destroyed" + collision.gameObject.name);
+    //                GameObject.FindGameObjectWithTag("City").GetComponent<City>().buildings.Remove(collision.gameObject);
+    //                Destroy(collision.gameObject);
+    //            }
+    //        }
+
+    //    }
 }

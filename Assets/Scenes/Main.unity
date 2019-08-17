@@ -301,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 2696821755805413944, guid: a0db57434f5e54c4b8b61956c8ed3e89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.004164219
+      value: 3.811
       objectReference: {fileID: 0}
     - target: {fileID: 2696821755805413944, guid: a0db57434f5e54c4b8b61956c8ed3e89,
         type: 3}
@@ -513,13 +513,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -7, y: 9, z: -7}
+  m_LocalRotation: {x: 0.30078566, y: 0.3618343, z: -0.124589495, w: 0.87354535}
+  m_LocalPosition: {x: -6, y: 11.5, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 38, y: 45, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,6 +642,8 @@ MonoBehaviour:
     type: 3}
   agentPrefab: {fileID: 2349094890584432702, guid: 93c4a7a56c2612e46914c8a10507da0b,
     type: 3}
+  agents: []
+  nAgents: 100
 --- !u!4 &1330399460
 Transform:
   m_ObjectHideFlags: 0

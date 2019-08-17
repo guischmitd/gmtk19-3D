@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class AgentController : MonoBehaviour
 {
-    Vector3 start;
     public Vector3 destination;
     public NavMeshAgent navMeshAgent;
-    private int scheduleIndex;
+    public int scheduleIndex;
+    public float distanceToDestination;
 
     public List<GameObject> schedule;
 
@@ -19,26 +19,22 @@ public class AgentController : MonoBehaviour
 
         scheduleIndex = 0;
 
-        //start = new Vector3(1, .1f, 2);
-        //destination = new Vector3(6, .1f, 8);
-
-        navMeshAgent.SetDestination(schedule[scheduleIndex].transform.position);
-
-        
+        navMeshAgent.SetDestination(schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position);
     }
 
     void NextDestination()
     {
-        scheduleIndex++;
-        navMeshAgent.SetDestination(schedule[scheduleIndex].transform.position);
+        scheduleIndex = (scheduleIndex + 1) % schedule.Count;
+        navMeshAgent.SetDestination(schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((transform.position - schedule[scheduleIndex].transform.position).magnitude <= 1f)
+        distanceToDestination = (transform.position - schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position).magnitude;
+        if (distanceToDestination <= .1f)
         {
-            print("Got to " + schedule[scheduleIndex].name);
+            //print("Got to " + schedule[scheduleIndex].name);
             NextDestination();
         }
     }
