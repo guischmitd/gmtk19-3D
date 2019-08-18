@@ -209,7 +209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: 54.5, z: 0}
 --- !u!1001 &718692995
 PrefabInstance:
@@ -518,7 +518,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 38, y: 45, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -643,7 +643,7 @@ MonoBehaviour:
   agentPrefab: {fileID: 2349094890584432702, guid: 93c4a7a56c2612e46914c8a10507da0b,
     type: 3}
   agents: []
-  nAgents: 100
+  nAgents: 1
 --- !u!4 &1330399460
 Transform:
   m_ObjectHideFlags: 0
@@ -656,7 +656,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1336881100
 PrefabInstance:
@@ -766,5 +766,5 @@ Transform:
   - {fileID: 718692996}
   - {fileID: 1148563374}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

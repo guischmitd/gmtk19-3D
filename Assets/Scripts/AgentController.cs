@@ -22,7 +22,7 @@ public class AgentController : MonoBehaviour
         navMeshAgent.SetDestination(schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position);
     }
 
-    void NextDestination()
+    public void NextDestination()
     {
         scheduleIndex = (scheduleIndex + 1) % schedule.Count;
         navMeshAgent.SetDestination(schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position);
@@ -32,7 +32,7 @@ public class AgentController : MonoBehaviour
     void Update()
     {
         distanceToDestination = (transform.position - schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position).magnitude;
-        if (distanceToDestination <= .1f)
+        if (distanceToDestination <= .15f)
         {
             //print("Got to " + schedule[scheduleIndex].name);
             NextDestination();

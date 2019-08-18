@@ -18,12 +18,11 @@ public class GameController : MonoBehaviour
     {
         city = Instantiate(cityPrefab);
         City cityController = city.GetComponent<City>();
-        cityController.nRows = 3;
         cityController.nCols = 3;
-        cityController.GenerateBuildings(2, 3, 4);
+        cityController.nRows = 3;
+        cityController.GenerateBuildings(4, 3, 2);
 
-        navMesh = Instantiate(navMeshPrefab);
-        navMesh.transform.parent = city.transform;
+        navMesh = Instantiate(navMeshPrefab, city.transform);
 
         navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
 
@@ -33,8 +32,9 @@ public class GameController : MonoBehaviour
         {
             // Instantiate an agent
             GameObject agent = Instantiate(agentPrefab);
-
-            agent.transform.position = new Vector3(Random.Range(0, Mathf.RoundToInt(city.transform.localScale.x)), agent.transform.position.y, Random.Range(0, Mathf.RoundToInt(city.transform.localScale.z)));
+            Vector3 pos = new Vector3(Random.Range(0, Mathf.RoundToInt(city.transform.localScale.x)), agent.transform.position.y, Random.Range(0, Mathf.RoundToInt(city.transform.localScale.z)));
+            agent.transform.position = pos;
+            //print(agent.transform.position);
 
             // Add buildings to the agent's schedule
             for (int j = 0; j < nDestinations; j++)
@@ -54,8 +54,8 @@ public class GameController : MonoBehaviour
         //{
         //    Destroy(city.gameObject);
         //    city = Instantiate(cityPrefab);
-        //    city.GetComponent<City>().rows = 3;
-        //    city.GetComponent<City>().cols = 3;
+        //    city.GetComponent<City>().nRows = 3;
+        //    city.GetComponent<City>().nCols = 3;
         //    city.GetComponent<City>().GenerateBuildings(3, 3, 3);
 
         //    navMesh = Instantiate(navMeshPrefab);

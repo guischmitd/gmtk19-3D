@@ -117,6 +117,8 @@ MonoBehaviour:
     type: 3}
   housePrefab: {fileID: 2696821755805413949, guid: 25cc317caa7ffb342b39e18edce0e354,
     type: 3}
-  emptyPrefab: {fileID: 0}
+  emptyPrefab: {fileID: 3709193697188981002, guid: 32ee268f5c0cbb4499fbc334845ce032,
+    type: 3}
   buildings: []
+  occupied: []
   roadSize: 0.25
