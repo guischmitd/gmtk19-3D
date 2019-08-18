@@ -13,14 +13,20 @@ public class GameController : MonoBehaviour
     public List<GameObject> agents;
     public int nAgents;
 
+    public int citySizeX;
+    public int citySizeZ;
+    public int nHospitals;
+    public int nSchools;
+    public int nMalls;
+
     // Start is called before the first frame update
     void Start()
     {
         city = Instantiate(cityPrefab);
         City cityController = city.GetComponent<City>();
-        cityController.nCols = 3;
-        cityController.nRows = 3;
-        cityController.GenerateBuildings(9, 0, 0);
+        cityController.nCols = citySizeX;
+        cityController.nRows = citySizeZ;
+        cityController.GenerateBuildings(nHospitals, nSchools, nMalls);
 
         navMesh = Instantiate(navMeshPrefab, city.transform);
 

@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ba1ea22e87c4049bc6404b0929e676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeX: 2
+  sizeX: 3
   sizeY: 1.25
-  sizeZ: 2
+  sizeZ: 3
   type: mall
   collided: 0
   entrance: {fileID: 8600982472311304586}
