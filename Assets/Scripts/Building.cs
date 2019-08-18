@@ -15,8 +15,8 @@ public class Building : MonoBehaviour
 
     public void Build(Vector2 pos, float roadSize)
     {
-        gameObject.transform.position = new Vector3(pos.x + sizeX / 2, sizeY / 2, pos.y + sizeZ / 2);
-        gameObject.transform.localScale = new Vector3(sizeX - roadSize, sizeY, sizeZ - roadSize);
+        gameObject.transform.position = new Vector3(pos.x + sizeX / 2, 0, pos.y + sizeZ / 2);
+        gameObject.transform.localScale = new Vector3(1 - roadSize / sizeX, 1 - roadSize, 1 - roadSize / sizeZ);
         return;
     }
 

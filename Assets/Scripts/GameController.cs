@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
         City cityController = city.GetComponent<City>();
         cityController.nCols = 3;
         cityController.nRows = 3;
-        cityController.GenerateBuildings(4, 4, 1);
+        cityController.GenerateBuildings(9, 0, 0);
 
         navMesh = Instantiate(navMeshPrefab, city.transform);
 

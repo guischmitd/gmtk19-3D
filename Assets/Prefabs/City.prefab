@@ -109,13 +109,13 @@ MonoBehaviour:
   nCols: 3
   schoolPrefab: {fileID: 2696821755805413949, guid: 4fedb2b040381244ab2b59534b5351a9,
     type: 3}
-  hospitalPrefab: {fileID: 2696821755805413949, guid: a0db57434f5e54c4b8b61956c8ed3e89,
+  hospitalPrefab: {fileID: 7164492566882971985, guid: 20aabbdb09a9c294eba2d02e92ba7b52,
     type: 3}
   mallPrefab: {fileID: 2696821755805413949, guid: 9d38430fad4d4504c9eafd42f55ed37f,
     type: 3}
-  parkPrefab: {fileID: 2696821755805413949, guid: 221451772d22f9c459878b4d00386414,
+  parkPrefab: {fileID: 5325026712314734312, guid: 4c382178eddd3ab478108dbd45a57c1b,
     type: 3}
-  housePrefab: {fileID: 2696821755805413949, guid: 25cc317caa7ffb342b39e18edce0e354,
+  housePrefab: {fileID: 1517975976796895317, guid: 7480e16be0cdbc84f8fd4b6db7a8e1b2,
     type: 3}
   emptyPrefab: {fileID: 3709193697188981002, guid: 32ee268f5c0cbb4499fbc334845ce032,
     type: 3}
