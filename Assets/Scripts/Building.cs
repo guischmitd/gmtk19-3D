@@ -11,7 +11,7 @@ public class Building : MonoBehaviour
     public bool collided;
     public GameObject entrance;
 
-    public GameObject[] agents;
+    public GameObject[] agentsInside;
 
     public void Build(Vector2 pos, float roadSize)
     {

@@ -381,7 +381,7 @@ PrefabInstance:
     - target: {fileID: 2696821755805413944, guid: 9d38430fad4d4504c9eafd42f55ed37f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6115723
+      value: 2.046
       objectReference: {fileID: 0}
     - target: {fileID: 2696821755805413944, guid: 9d38430fad4d4504c9eafd42f55ed37f,
         type: 3}
@@ -532,6 +532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ac8016dff2edd4b8cc53d1ddf47812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  minZoom: 15
+  maxZoom: 0.5
 --- !u!1001 &1148563373
 PrefabInstance:
   m_ObjectHideFlags: 0

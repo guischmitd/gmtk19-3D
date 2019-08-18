@@ -90,8 +90,8 @@ public class City : MonoBehaviour
                         }
                     }
                     
-                    building.name = buildingPool[instantiatedBuildings].name + i.ToString() + j.ToString();
-                    building.GetComponent<Building>().Build(new Vector2 (j * 3, i * 3), roadSize);
+                    building.name = buildingPool[instantiatedBuildings].name + " x" + i.ToString() + " y" + j.ToString();
+                    building.GetComponent<Building>().Build(new Vector2 (i * 3, j * 3), roadSize);
 
                     building.transform.parent = gameObject.transform;
                     buildings.Add(building);

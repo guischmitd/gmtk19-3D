@@ -207,7 +207,7 @@ MonoBehaviour:
   type: park
   collided: 0
   entrance: {fileID: 231486404}
-  agents: []
+  agentsInside: []
 --- !u!54 &-5840331046933766322
 Rigidbody:
   m_ObjectHideFlags: 0

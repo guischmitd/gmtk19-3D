@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
         City cityController = city.GetComponent<City>();
         cityController.nCols = 3;
         cityController.nRows = 3;
-        cityController.GenerateBuildings(4, 3, 2);
+        cityController.GenerateBuildings(4, 4, 1);
 
         navMesh = Instantiate(navMeshPrefab, city.transform);
 
@@ -50,17 +50,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.anyKeyDown)
-        //{
-        //    Destroy(city.gameObject);
-        //    city = Instantiate(cityPrefab);
-        //    city.GetComponent<City>().nRows = 3;
-        //    city.GetComponent<City>().nCols = 3;
-        //    city.GetComponent<City>().GenerateBuildings(3, 3, 3);
-
-        //    navMesh = Instantiate(navMeshPrefab);
-        //    navMesh.transform.parent = city.transform;
-        //    navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
-        //}
+        
     }
 }
