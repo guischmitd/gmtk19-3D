@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nRows: 5
   nCols: 3
-  schoolPrefab: {fileID: 2696821755805413949, guid: 4fedb2b040381244ab2b59534b5351a9,
+  schoolPrefab: {fileID: 7719068951051895125, guid: 763666f8755b8464cbec87554deb3493,
     type: 3}
   hospitalPrefab: {fileID: 7164492566882971985, guid: 20aabbdb09a9c294eba2d02e92ba7b52,
     type: 3}
