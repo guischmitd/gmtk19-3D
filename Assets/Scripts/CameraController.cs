@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     Camera cam;
     public float speed;
+    public float zoomSpeed;
     public float minZoom;
     public float maxZoom;
 
@@ -27,7 +28,7 @@ public class CameraController : MonoBehaviour
 
         if (Input.mouseScrollDelta.y != 0)
         {
-            cam.orthographicSize -= Input.mouseScrollDelta.y * Time.deltaTime * speed;
+            cam.orthographicSize -= Input.mouseScrollDelta.y * Time.deltaTime * zoomSpeed;
 
             if (cam.orthographicSize >= minZoom)
             {

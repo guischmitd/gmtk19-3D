@@ -9,8 +9,10 @@ public class AgentController : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public int scheduleIndex;
     public float distanceToDestination;
+    public bool isInside;
 
     public List<GameObject> schedule;
+    public List<float> scheduleTime;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,24 @@ public class AgentController : MonoBehaviour
         scheduleIndex = 0;
 
         navMeshAgent.SetDestination(schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position);
+    }
+
+    IEnumerator Enter(GameObject building)
+    {
+        navMeshAgent.enabled = false;
+        transform.position = building.transform.position;
+        print("Started countdown at " + Time.time.ToString());
+        yield return new WaitForSeconds(scheduleTime[scheduleIndex]);
+        print("Finished countdown at " + Time.time.ToString());
+        transform.position = building.GetComponent<Building>().entrance.transform.position;
+        navMeshAgent.enabled = true;
+        NextDestination();
+        isInside = false;
+    }
+
+    public void Enter(Building building)
+    {
+
     }
 
     public void NextDestination()
@@ -32,10 +52,10 @@ public class AgentController : MonoBehaviour
     void Update()
     {
         distanceToDestination = (transform.position - schedule[scheduleIndex].GetComponent<Building>().entrance.transform.position).magnitude;
-        if (distanceToDestination <= .15f)
+        if (distanceToDestination <= .15f && !isInside)
         {
-            //print("Got to " + schedule[scheduleIndex].name);
-            NextDestination();
+            isInside = true;
+            StartCoroutine(Enter(schedule[scheduleIndex]));
         }
     }
 }

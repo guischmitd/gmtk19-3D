@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour
             {
                 int index = Random.Range(0, cityController.buildings.Count);
                 agent.GetComponent<AgentController>().schedule.Add(cityController.buildings[index]);
+                agent.GetComponent<AgentController>().scheduleTime.Add(Random.Range(4, 10) * 1.0f);
             }
             // Add the agent to the list of created agents
             agents.Add(agent);
