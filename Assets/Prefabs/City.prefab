@@ -111,7 +111,7 @@ MonoBehaviour:
     type: 3}
   hospitalPrefab: {fileID: 7164492566882971985, guid: 20aabbdb09a9c294eba2d02e92ba7b52,
     type: 3}
-  mallPrefab: {fileID: 2696821755805413949, guid: 9d38430fad4d4504c9eafd42f55ed37f,
+  mallPrefab: {fileID: 8281815777666757708, guid: 354f7fa788802844697e2372f73636c3,
     type: 3}
   parkPrefab: {fileID: 5325026712314734312, guid: 4c382178eddd3ab478108dbd45a57c1b,
     type: 3}
